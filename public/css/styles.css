@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Montserrat;
+  background: #F8FBF8 ;
+
+}
+
+
+/* Nav Styles */
+
+nav {
+  width: 100%;
+  height: 15vh;
+  display: flex;
+
+  align-items: center;
+
+
+  color: black;
+  padding-top: 5%;
+
+
+}
+
+nav h3{
+  padding: 15px;
+  text-transform: uppercase;
+  font-size: 40px;
+  margin-left: 10%;
+
+
+}
+
+.link-container {
+  font-weight: 300;
+  padding: 10px;
+  padding-right: 10%;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.link-container a {
+  margin-right: 25px;
+  text-decoration: none;
+  color: #5BF64E ;
+}
+
+.link-container a:hover{
+  color: black;
+}
+
+.cursor {
+  width: 2px;
+  height: 40px;
+  background-color: #5BF64E ;
+  animation-name: flash;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes flash {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+
+/* Hero section styles */
+
+
+.hero-container{
+  width: 100%;
+  height: 100vh;
+  /* background: blue; */
+  margin-top: 70px;
+  display: flex;
+  justify-content: center;
+}
+
+.img-section {
+  width: 55%;
+  height: 100%;
+  padding-right: 15px;
+  /* background: yellow; */
+}
+
+.img-section img {
+  height: 100%;
+  width: 100%;
+  margin-top: 6px;
+
+}
+
+.recent-posts{
+  width: 25%;
+  height: 100%;
+  /* background: green; */
+
+}
+
+.recent-posts h3 {
+  font-weight: 300;
+  font-size: 30px;
+  width: 50%;
+  text-transform: uppercase;
+  /* margin-left: 3px; */
+}
+
+.post {
+  margin-top: 30px;
+  color: #5BF64E;
+}
+
+.post a{
+  text-decoration: none;
+  color: #5BF64E;
+}
+
+.post a:hover{
+  color: black;
+}
+
+.footer{
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
