@@ -1,15 +1,35 @@
 <%- include("partials/header"); -%>
 <div class="hero-container">
-<div class="img-section">
-<img src="./code.jpg" alt="binary-code-on-screen">
+<div class="hero-inner">
+  <div class="inner-left">
+
+<h2>The <span class="green">ultimate</span> code blog</h2>
+<p class="green">A place for programmers to talk code.</p>
+  <h1>CODE</h1>
+  </div>
+  <div class="inner-right">
+
+  </div>
+
 </div>
-<div class="recent-posts">
-<h3>Recent Posts</h3>
-<div class="post">
-  <h3><a href="#">Something about code</a></h3>
-  <p>Oct 8, 2020</p>
 </div>
+<div class="post-container">
+  <h2>Recent Posts</h2>
+<div class="post-inner">
+  <%latestArr.forEach(function(num){ %>
+
+
+  <div class="post-card">
+<div class="post-img">
+
 </div>
+<h3>Something about code</h3>
+<p>Oct 21, 2020</p>
+  </div>
+  <% }) %>
+
+</div>
+<a href="#">Show more...</a>
 </div>
 
 <%- include("partials/footer"); -%>
