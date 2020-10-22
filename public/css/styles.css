@@ -211,54 +211,6 @@ display: flex;
   margin-bottom: 10px;
 }
 
-
-
-/* .img-section {
-  width: 55%;
-  height: 100%;
-  padding-right: 15px;
-  background: yellow;
-}
-
-.img-section img {
-  height: 100%;
-  width: 100%;
-  margin-top: 6px;
-
-}
-
-.recent-posts{
-  width: 25%;
-  height: 100%;
-  /* background: green; */
-
-/* } */
-
-/* .recent-posts h3 {
-  font-weight: 300;
-  font-size: 30px;
-  width: 50%;
-  text-transform: uppercase;
-  color: #F8FBF8 ; */
-  /* margin-left: 3px; */
-/* }
-
-.post {
-  margin-top: 30px;
-  color: #5BF64E;
-}
-
-.post a{
-  text-decoration: none;
-  color: #5BF64E;
-}
-
-.post a:hover{
-  color: #F8FBF8 ;
-} */
-
-
-
 .footer{
   width: 100%;
   height: 10vh;
