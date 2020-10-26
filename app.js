@@ -16,6 +16,20 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
+mongoose.connect("mongodb://localhost:27017/TalkingCodeDB", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false
+});
+
+const postSchema = new mongoose.Schema({
+title: String,
+content: String,
+
+});
+
+const Post = mongoose.model("Post", postSchema);
+
 app.get("/", (req, res) => {
 res.render("home", {latestArr: latestArr});
 });
@@ -31,6 +45,28 @@ res.render("about", {aboutContent: aboutContent});
 
 app.get("/contact", (req, res) => {
 res.render("contact", {contactContent: contactContent});
+});
+
+app.get("/all-posts", (req, res) => {
+  res.render("all-posts");
+});
+
+app.post("/compose", (req, res) => {
+  const postTitle = req.body.postTitle;
+  const postContent = req.body.postBody;
+
+  const post = new Post({
+    title: postTitle,
+    content: postContent
+  });
+
+  post.save((err) => {
+    if(!err){
+      res.redirect("/");
+    } else {
+      alert("That did not work");
+    }
+  });
 });
 
 
