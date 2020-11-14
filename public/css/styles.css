@@ -13,6 +13,8 @@ body {
 
 /* Nav Styles */
 
+
+
 nav {
   width: 100%;
   height: 15vh;
@@ -76,6 +78,12 @@ nav h3{
 @keyframes flash {
   from {opacity: 0;}
   to {opacity: 1;}
+}
+
+.logo{
+  font-weight: 100;
+  text-transform: lowercase;
+  color: #5BF64E ;
 }
 
 

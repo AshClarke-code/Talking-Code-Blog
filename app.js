@@ -23,8 +23,18 @@ mongoose.connect("mongodb://localhost:27017/TalkingCodeDB", {
 });
 
 const postSchema = new mongoose.Schema({
-title: String,
-content: String,
+title: {
+  type: String,
+  required: "Title cannot be empty."
+},
+content: {
+  type: String,
+  required: "Content cannot be empty."
+},
+created_date: {
+  type: Date,
+  default: Date.now
+}
 
 });
 
@@ -47,8 +57,14 @@ app.get("/contact", (req, res) => {
 res.render("contact", {contactContent: contactContent});
 });
 
-app.get("/all-posts", (req, res) => {
-  res.render("all-posts");
+app.get("/posts", (req, res) => {
+
+  Post.find({}, function(err, posts){
+    res.render("all-posts", {
+      posts: posts
+    });
+  });
+
 });
 
 app.post("/compose", (req, res) => {
@@ -59,6 +75,7 @@ app.post("/compose", (req, res) => {
     title: postTitle,
     content: postContent
   });
+  // console.log(post._id);
 
   post.save((err) => {
     if(!err){
@@ -66,6 +83,15 @@ app.post("/compose", (req, res) => {
     } else {
       alert("That did not work");
     }
+  });
+});
+
+app.get("/posts/:postId", function(req, res){
+  Post.findById(req.params.postId, function(err, post){
+    res.render("post", {
+      title: post.title,
+      content: post.content
+    });
   });
 });
 
